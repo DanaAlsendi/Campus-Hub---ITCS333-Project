@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <!-- HTML page creation -->
+    <head>
+        <meta charset = "UTF-8">
+        <title>Club Activities</title>
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+        <link rel = "stylesheet" href = "style.css">
+        <script src="script.js" defer></script>
+    </head>
+
+<!-- Body of the HTML page -->
+
+    <header>
+        <main class = "container">
+            <h1><a href = "../index.html">
+                <img src = "log.png" width = "150px" height = "150px" >
+            </a>Campus Hub</h1>
+        <!-- The navigation bar -->
+            <nav>
+                <a href = "../index.html">Main Page</a> |
+                <a href = "../study-group-finder/study-group-finder.html">Group Finder</a> |
+                <a href = "../CourseReviews/CourseReviews.html">Course Reviews</a> |
+                <a href = "../CourseNotes/courseNotes.html">Course Notes</a> |
+                <a href = "../club-activities/ClubActivities.html">Club Activities</a> |
+                <a href = "../CampusNews/CampusNews.html">Campus News</a> |
+                <a href = "../marketplace/StudentMarketplace.html">Marketplace</a>
+            </nav>
+        </main>
+    </header>
+
+    <hr>
+    <body>
+    <main class = "container">
+        <section>
+
+        <!-- Information about club activities: -->
+        
+            <h1>About Club Activities</h1>
+            <p>At Campus Hub, we provide the ultimate University experience by
+                encouraging students to participate in various activities.</p>
+        </section>
+        <hr>
+
+        <!-- Introductory display of the clubs: -->
+        <section>
+            <h3>Get to know our clubs!</h3>
+            <div class = "info">
+                <details>
+                    <summary>Music Club</summary>
+                    <p>The Music club is all about giving the students who have a passion 
+                        in singing, playing an instrument or even just performing a home.</p>
+                </details><br>
+
+                <details>
+                    <summary>Debate Club</summary>
+                    <p>The Debate club is for the students who love public speaking and want to improve their 
+                        argumentation and comunication skills, it also help build confidence. </p>
+                </details><br>
+
+                <details>
+                    <summary>Chess Club</summary>
+                    <p>The chess club is a big community with top students that have advanced 
+                        problem-solving skills, it helps improve your logical thinking and also helps you relax.</p>
+                </details><br>
+
+                <details>
+                    <summary>Sports Club</summary>
+                    <p>The sports club is for the students who love sports and want to stay active,
+                        it has a big role in building teamwork and getting to know new people.</p>
+                </details>
+            </div>
+        </section>
+        <hr>
+
+        <!-- Search of any activity using the search bar (<form>) and filtering with the provided clubs: -->
+        <section>
+            <section class="search-filter">
+                <h3>Search for Upcoming Activities:</h3>
+                <input type="text" placeholder="Search for activities by club name, ex. Chess, Debate, Music or Sports." />
+                <select class="sorting">
+                    <option value= "1">Newest to oldest</option>
+                    <option value= "2">Oldest to newest</option>
+                </select>
+                <button type="submit" id="submit-button"><strong> Search</strong></button>
+
+        </section>
+
+        <!-- Result section showing activities: -->
+        <section>
+            <div class = "results" >
+
+            </div>
+
+            <!-- The pagination buttons: -->
+            <div class="paginationing">
+
+                <a href=""><<</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">>></a>
+            </div>
+
+        </section>
+        <hr>
+        
+        <!-- The Edit button dailog for editing contents.-->
+        <dialog id="editModal">
+            <form method="dialog" id="editAct">
+              <h2>Edit Activity</h2>
+              <input type="text" id="editClub" placeholder="Club" required />
+              <input type="text" id="editActivity" placeholder="Activity Title" required />
+              <input type="date" id="editDate" required />
+              <input type="text" id="editLocation" placeholder="Location" required />
+              <textarea id="editDescription" placeholder="Description" required></textarea>
+              <button id = "ebitbtn" type="submit">Apply Changes</button>
+              <button type="button" id="cancelEdit">Cancel</button>
+            </form>
+        </dialog>
+
+        <!-- Adding an activity form: -->
+        <section>
+            <h3>Add Activity</h3>
+            <form id = "addActForm">
+                <label for = "club" ><Strong>CLUB:</Strong> 
+                    <br><br>
+                    <input type="radio" id="music" name="club" value="Music Club" >Music Club
+                    <input type="radio" id="debate" name="club" value="Debate Club" >Debate Club
+                    <input type="radio" id="chess" name="club" value="Chess Club" >Chess Club
+                    <input type="radio" id="sports" name="club" value="Sports Club" >Sports Club
+                    <br><br>
+                </label>
+
+                <label for="title">Activity Title:</label>
+                <input type="text" id="title" name="title">
+                <br><br>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+                <br><br>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+                <br><br>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+                <br><br>
+
+                <input type="submit" id="submit-button" value="Add" >
+                <p id="form-error" style="color:red;"></p>
+            </form>
+        </section>
+    </main>
+    </body>
+    <!-- Footer (Synchronized to all pages): -->
+    <hr>
+    <footer>
+        <main class="container">
+            <h5>University Official Accounts</h5>
+            <a href= "https://www.instagram.com/uobedubh/?hl=ar">
+                <img src="instaact.png" width="30px" height="30px">
+            </a>
+            <a href="https://www.facebook.com/MyUOB/">
+                <img src="facebookact.png"width="30px" height="30px"> 
+            </a>
+            <a href="https://www.uob.edu.bh/">
+                <img src="webact.png"width="30px" height="30px"> 
+            </a>
+            <h5>&copy; 2025 Campus Hub</h5>
+        </main>
+    </footer>
+
+</html>
